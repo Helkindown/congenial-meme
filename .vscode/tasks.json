@@ -3,7 +3,7 @@
         {
             "label": "build_debug",
 			"type": "shell",
-			"command": "make"
+			"command": "make debug"
         },
 		{
             "label": "clean",

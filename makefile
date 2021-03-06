@@ -1,12 +1,15 @@
-.PHONY: all clean deepclean
+.PHONY: all clean deepclean debug
 
 NAME=main
 
 CC=gcc
-CFLAGS=-Wall -Wextra -g
+CFLAGS=-Wall -Wextra
 GTKFLAGS=$(shell pkg-config --cflags --libs gtk+-3.0) 
 
 all: $(NAME)
+
+debug: CFLAGS+=-g
+debug: all
 
 main: main.o
 	$(CC) $(CFLAGS) $(GTKFLAGS) -o $@ $<
