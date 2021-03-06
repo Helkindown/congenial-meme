@@ -9,7 +9,7 @@ GTKFLAGS=$(shell pkg-config --cflags --libs gtk+-3.0)
 all: $(NAME)
 
 main: main.o
-	$(CC) $(CFLAGS) -o $@ $<
+	$(CC) $(CFLAGS) $(GTKFLAGS) -o $@ $<
 
 main.o: main.c
 	$(CC) $(CFLAGS) $(GTKFLAGS) -c -o $@ $<
